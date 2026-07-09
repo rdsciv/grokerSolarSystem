@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmos — Solar System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <canvas id="canvas"></canvas>
+
+      <!-- Top bar -->
+      <header class="hud-top">
+        <div class="brand">
+          <span class="brand-mark"></span>
+          <div class="brand-text">
+            <h1>Cosmos</h1>
+            <p>Solar System Simulation</p>
+          </div>
+        </div>
+        <div class="status-pills">
+          <div class="pill" id="fps-pill">
+            <span class="pill-dot live"></span>
+            <span id="fps-value">60</span> FPS
+          </div>
+          <div class="pill" id="time-pill">
+            <span class="pill-label">Sim date</span>
+            <span id="sim-date">—</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Left panel: focus / info -->
+      <aside class="hud-panel hud-left">
+        <div class="panel-header">
+          <span class="panel-eyebrow">Focus</span>
+          <h2 id="focus-name">Sun</h2>
+        </div>
+        <div class="info-grid" id="focus-info">
+          <div class="info-item">
+            <span class="info-label">Type</span>
+            <span class="info-value" id="info-type">Star</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Radius</span>
+            <span class="info-value" id="info-radius">696,340 km</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Distance</span>
+            <span class="info-value" id="info-distance">—</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Orbital period</span>
+            <span class="info-value" id="info-period">—</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Day length</span>
+            <span class="info-value" id="info-day">25.4 days</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Moons</span>
+            <span class="info-value" id="info-moons">—</span>
+          </div>
+        </div>
+        <p class="focus-blurb" id="focus-blurb">
+          The Sun is a G-type main-sequence star at the heart of our solar system,
+          holding the planets in gravitational embrace.
+        </p>
+      </aside>
+
+      <!-- Right panel: bodies -->
+      <aside class="hud-panel hud-right">
+        <div class="panel-header">
+          <span class="panel-eyebrow">Bodies</span>
+          <h2>Navigate</h2>
+        </div>
+        <div class="body-list" id="body-list"></div>
+      </aside>
+
+      <!-- Bottom controls -->
+      <footer class="hud-bottom">
+        <div class="control-card time-card">
+          <div class="control-header">
+            <span class="control-title">Time</span>
+            <span class="control-value" id="speed-label">1 day / sec</span>
+          </div>
+          <div class="time-controls">
+            <button class="icon-btn" id="btn-pause" title="Pause / Play" aria-label="Pause">
+              <svg id="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="6" y="5" width="4" height="14" rx="1" />
+                <rect x="14" y="5" width="4" height="14" rx="1" />
+              </svg>
+              <svg id="icon-play" class="hidden" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.14v13.72a1 1 0 0 0 1.5.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86a1 1 0 0 0-1.5.86z" />
+              </svg>
+            </button>
+            <button class="icon-btn" id="btn-reset" title="Reset time" aria-label="Reset">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 3-6.7" stroke-linecap="round" />
+                <path d="M3 4v5h5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="slider-wrap">
+              <input
+                type="range"
+                id="speed-slider"
+                min="0"
+                max="100"
+                value="30"
+                aria-label="Simulation speed"
+              />
+              <div class="speed-ticks">
+                <span>Pause</span>
+                <span>Day</span>
+                <span>Year</span>
+                <span>Century</span>
+              </div>
+            </div>
+            <div class="preset-row">
+              <button class="chip" data-speed="0">0×</button>
+              <button class="chip" data-speed="1">1×</button>
+              <button class="chip" data-speed="30">30×</button>
+              <button class="chip active" data-speed="365">1y</button>
+              <button class="chip" data-speed="3650">10y</button>
+              <button class="chip" data-speed="36500">100y</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="control-card options-card">
+          <div class="control-header">
+            <span class="control-title">Display</span>
+          </div>
+          <div class="toggles">
+            <label class="toggle">
+              <input type="checkbox" id="toggle-orbits" checked />
+              <span class="toggle-ui"></span>
+              <span>Orbits</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="toggle-labels" checked />
+              <span class="toggle-ui"></span>
+              <span>Labels</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="toggle-trails" />
+              <span class="toggle-ui"></span>
+              <span>Trails</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="toggle-asteroids" checked />
+              <span class="toggle-ui"></span>
+              <span>Asteroids</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="control-card help-card">
+          <div class="help-row">
+            <kbd>Drag</kbd><span>Orbit</span>
+            <kbd>Scroll</kbd><span>Zoom</span>
+            <kbd>Right-drag</kbd><span>Pan</span>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Floating labels container -->
+      <div id="labels" class="labels-layer"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
