@@ -3,6 +3,29 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "description": "Interactive Three.js solar system simulation with realistic orbits, adjustable time, and a modern glass HUD",
+  "license": "MIT",
+  "author": "Ryan Childress",
+  "homepage": "https://rdsciv.github.io/grokerSolarSystem/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rdsciv/grokerSolarSystem.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rdsciv/grokerSolarSystem/issues"
+  },
+  "keywords": [
+    "threejs",
+    "solar-system",
+    "webgl",
+    "space",
+    "simulation",
+    "astronomy",
+    "vite"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -1,0 +1,38 @@
+name: Bug report
+description: Report something that is broken
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open the live demo
+        2. Click Saturn
+        3. …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser / device
+      placeholder: Chrome 131 / macOS / desktop
+  - type: input
+    id: url
+    attributes:
+      label: URL (if shareable state)
+      placeholder: "?focus=mars&speed=365"

@@ -3,7 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cosmos — Solar System</title>
+    <title>Cosmos — Solar System Simulation</title>
+    <meta
+      name="description"
+      content="Interactive Three.js solar system with realistic orbital periods, adjustable time, starfield, and a modern glass HUD."
+    />
+    <meta name="theme-color" content="#05060a" />
+    <link rel="canonical" href="https://rdsciv.github.io/grokerSolarSystem/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cosmos" />
+    <meta property="og:title" content="Cosmos — Solar System Simulation" />
+    <meta
+      property="og:description"
+      content="Interactive Three.js solar system with realistic orbital periods, adjustable time, and a modern glass HUD."
+    />
+    <meta
+      property="og:url"
+      content="https://rdsciv.github.io/grokerSolarSystem/"
+    />
+    <meta
+      property="og:image"
+      content="https://rdsciv.github.io/grokerSolarSystem/og.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cosmos — Solar System Simulation" />
+    <meta
+      name="twitter:description"
+      content="Interactive Three.js solar system with realistic orbital periods, adjustable time, and a modern glass HUD."
+    />
+    <meta
+      name="twitter:image"
+      content="https://rdsciv.github.io/grokerSolarSystem/og.png"
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -168,6 +206,14 @@
             <kbd>Scroll</kbd><span>Zoom</span>
             <kbd>Right-drag</kbd><span>Pan</span>
           </div>
+          <button class="share-btn" id="btn-share" type="button" title="Copy shareable link (S)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7" stroke-linecap="round" />
+              <path d="M12 3v12" stroke-linecap="round" />
+              <path d="M8 7l4-4 4 4" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="share-label">Share</span>
+          </button>
         </div>
       </footer>
 
