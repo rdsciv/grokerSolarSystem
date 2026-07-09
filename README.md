@@ -4,6 +4,8 @@ A beautiful, interactive Three.js simulation of the solar system with realistic 
 
 **Live demo:** [https://rdsciv.github.io/grokerSolarSystem/](https://rdsciv.github.io/grokerSolarSystem/)
 
+![Cosmos solar system simulation demo](docs/demo.gif)
+
 ## Run locally
 
 ```bash
