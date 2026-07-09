@@ -13,9 +13,11 @@ A beautiful, interactive Three.js simulation of the solar system with realistic 
 
 ## Run locally
 
-Requires **Node.js 20+**.
+Requires **Node.js 20+** and Git.
 
 ```bash
+git clone https://github.com/rdsciv/grokerSolarSystem.git
+cd grokerSolarSystem
 npm install
 npm run dev
 ```
@@ -26,7 +28,6 @@ Open the URL Vite prints (default `http://localhost:5173`).
 npm run build    # production build
 npm run preview  # serve dist/
 ```
-
 ## Features
 
 - **All 8 planets + Sun** with Keplerian elliptical orbits

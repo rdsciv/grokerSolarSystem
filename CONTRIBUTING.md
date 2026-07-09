@@ -5,12 +5,13 @@ Thanks for helping improve this solar-system simulation.
 ## Quick start
 
 ```bash
+git clone https://github.com/rdsciv/grokerSolarSystem.git
+cd grokerSolarSystem
 npm install
 npm run dev
 ```
 
-Requirements: **Node.js 20+** (see `.nvmrc`).
-
+Requirements: **Node.js 20+** (see `.nvmrc`) and Git.
 ```bash
 npm run build   # production build (same as CI / GitHub Pages)
 npm run preview # preview the production build
