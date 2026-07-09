@@ -40,3 +40,15 @@ Open the URL Vite prints (default `http://localhost:5173`).
 
 - [Three.js](https://threejs.org/) — WebGL scene, post-processing
 - [Vite](https://vitejs.dev/) — dev server & build
+
+## Star History
+
+<p align="center">
+ <a href="https://www.star-history.com/#rdsciv/grokerSolarSystem&Date">
+  <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rdsciv/grokerSolarSystem&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=rdsciv/grokerSolarSystem&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=rdsciv/grokerSolarSystem&type=Date" />
+  </picture>
+ </a>
+</p>
